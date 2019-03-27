@@ -1,18 +1,96 @@
+@charset "UTF-8";
 /*
-Theme Name: Futuris Cliëntenportaal
-Theme URI: https://github.com/tidythemes/blankslate
-Author: TidyThemes
-Author URI: http://tidythemes.com/
-Description: Please read: tidythemes.com/concept. BlankSlate is the definitive WordPress HTML5 boilerplate starter theme. We've carefully constructed the most clean and minimalist theme possible for designers and developers to use as a base to build websites for clients or to build completely custom themes from scratch. Clean, simple, unstyled, semi-minified, unformatted, and valid code, SEO-friendly, jQuery-enabled, no programmer comments, standardized and as white label as possible, and most importantly, the CSS is reset for cross-browser-compatability and no intrusive visual CSS styles have been added whatsoever. A perfect skeleton theme. For support and suggestions, go to: https://github.com/tidythemes/blankslate/issues. Thank you.
-Version: 2019
-License: GNU General Public License
-License URI: https://www.gnu.org/licenses/gpl.html
-Tags: one-column, two-columns, custom-menu, featured-images, microformats, sticky-post, threaded-comments, translation-ready
-Text Domain: blankslate
-
-BlankSlate WordPress Theme © 2011-2019 TidyThemes
-BlankSlate is distributed under the terms of the GNU GPL
+	Theme Name: Futuris Cliëntenportaal
+	Theme URI: http://www.bartvandenberkmortel.nl
+	Description: Thema voor het Cliëntenportaal Futuris
+	Version: 1.0
+	Author: Bart van den Berkmortel
 */
-
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}html{scroll-behavior:smooth}body{line-height:1}a{text-decoration-skip-ink:auto}button{outline:0}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}q{display:inline;font-style:italic}q:before{content:'"';font-style:normal}q:after{content:'"';font-style:normal}textarea,input[type="text"],input[type="button"],input[type="submit"],input[type="reset"],input[type="search"],input[type="password"]{-webkit-appearance:none;appearance:none;border-radius:0}table{border-collapse:collapse;border-spacing:0}th,td{padding:2px}big{font-size:120%}small,sup,sub{font-size:80%}sup{vertical-align:super}sub{vertical-align:sub}dd{margin-left:20px}kbd,tt{font-family:courier;font-size:12px}ins{text-decoration:underline}del,strike,s{text-decoration:line-through}dt{font-weight:bold}address,cite,var{font-style:italic}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;transition:all 0.5s ease}
-.sticky{}.bypostauthor{}.wp-caption{}.wp-caption-text{}.gallery-caption{}.alignright{}.alignleft{}.aligncenter{}.screen-reader-text{clip:rect(1px, 1px, 1px, 1px);position:absolute !important}
+body {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 14px; }
+  body h1 {
+    font-family: 'Merriweather', serif; }
+  body h2 {
+    font-size: 16px;
+    font-size: 500; }
+  body header {
+    background-color: #006CA9;
+    background-image: -moz-linear-gradient(left, #003A70, #006CA9);
+    background-image: -webkit-gradient(linear, 0 0, 100% 0, from(#003A70), to(#006CA9));
+    background-image: -webkit-linear-gradient(left, #003A70, #006CA9);
+    background-image: -o-linear-gradient(left, #003A70, #006CA9);
+    background-image: linear-gradient(to right, #003A70, #006CA9);
+    background-repeat: repeat-x; }
+    body header .navbar-nav .menu-item .nav-link {
+      font-size: 14px;
+      color: white; }
+      body header .navbar-nav .menu-item .nav-link:after {
+        content: "|";
+        margin-left: 15px;
+        color: white; }
+    body header .navbar-nav .menu-item.active .nav-link {
+      color: #003A70;
+      text-decoration: underline; }
+    body header .intro {
+      text-align: center;
+      padding: 80px 0;
+      color: white; }
+  body footer h3 {
+    font-family: 'Merriweather', serif;
+    font-size: 18px;
+    font-size: 700; }
+  body footer .top-footer {
+    background: #e8e8e8;
+    padding: 30px; }
+    body footer .top-footer .logo {
+      width: 140px;
+      margin-bottom: 30px; }
+    body footer .top-footer .social i {
+      -webkit-transition: all 0.5s ease-out;
+      -moz-transition: all 0.5s ease-out;
+      -ms-transition: all 0.5s ease-out;
+      -o-transition: all 0.5s ease-out;
+      transition: all 0.5s ease-out;
+      height: 40px;
+      width: 40px;
+      background: #b7b7b7;
+      color: white;
+      border-radius: 40px;
+      text-align: center;
+      line-height: 40px;
+      margin-right: 8px; }
+      body footer .top-footer .social i:hover {
+        background: #848484; }
+    body footer .top-footer ul {
+      padding: 0;
+      margin: 0; }
+      body footer .top-footer ul li {
+        list-style: none;
+        margin-bottom: 10px;
+        color: #737373; }
+        body footer .top-footer ul li a {
+          color: #737373; }
+  body footer .bottom-footer {
+    background: #b7b7b7;
+    padding: 20px 0;
+    color: white; }
+    body footer .bottom-footer ul {
+      margin-bottom: 0;
+      padding-left: 0; }
+      body footer .bottom-footer ul li {
+        display: inline; }
+        body footer .bottom-footer ul li a {
+          -webkit-transition: all 0.5s ease-out;
+          -moz-transition: all 0.5s ease-out;
+          -ms-transition: all 0.5s ease-out;
+          -o-transition: all 0.5s ease-out;
+          transition: all 0.5s ease-out;
+          color: white; }
+          body footer .bottom-footer ul li a:hover {
+            text-decoration: underline; }
+          body footer .bottom-footer ul li a:first-child::after {
+            content: "|";
+            margin-left: 15px;
+            margin-right: 10px; }

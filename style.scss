@@ -1,0 +1,158 @@
+/*
+	Theme Name: Futuris Cliëntenportaal
+	Theme URI: http://www.bartvandenberkmortel.nl
+	Description: Thema voor het Cliëntenportaal Futuris
+	Version: 1.0
+	Author: Bart van den Berkmortel
+*/
+$blauw_licht: #006CA9;
+$blauw_donker: #003A70;
+$tekst: #737373;
+$grijs_licht: #e8e8e8;
+$grijs_donker: #b7b7b7; // MIXINS
+@mixin gradient-horizontal($startColor: #555, $endColor: #333) {
+   background-color : $endColor;
+   background-image : -moz-linear-gradient(left, $startColor, $endColor); // FF 3.6+
+   background-image : -webkit-gradient(linear, 0 0, 100% 0, from($startColor), to($endColor)); // Safari 4+, Chrome 2+
+   background-image : -webkit-linear-gradient(left, $startColor, $endColor); // Safari 5.1+, Chrome 10+
+   background-image : -o-linear-gradient(left, $startColor, $endColor); // Opera 11.10
+   background-image : linear-gradient(to right, $startColor, $endColor); // Standard, IE10
+   background-repeat: repeat-x; // IE9 and down
+}
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+   -webkit-transition: $what $time $how;
+   -moz-transition   : $what $time $how;
+   -ms-transition    : $what $time $how;
+   -o-transition     : $what $time $how;
+   transition        : $what $time $how;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   font-weight: 400;
+   font-size  : 14px;
+
+   h1 {
+      font-family: 'Merriweather', serif;
+   }
+
+   h2 {
+      font-size: 16px;
+      font-size: 500;
+   }
+
+   header {
+      @include gradient-horizontal($blauw_donker, $blauw_licht);
+
+      .navbar-nav {
+         .menu-item {
+            .nav-link {
+               font-size: 14px;
+               color    : white;
+
+               &:after {
+                  content    : "|";
+                  margin-left: 15px;
+                  color      : white;
+               }
+            }
+
+            &.active {
+               .nav-link {
+                  color          : $blauw_donker;
+                  text-decoration: underline;
+               }
+            }
+         }
+      }
+
+      .intro {
+         text-align: center;
+         padding   : 80px 0;
+         color     : white;
+      }
+   }
+
+   footer {
+      h3 {
+         font-family: 'Merriweather', serif;
+         font-size  : 18px;
+         font-size  : 700;
+      }
+
+      .top-footer {
+         background: $grijs_licht;
+         padding   : 30px;
+
+         .logo {
+            width        : 140px;
+            margin-bottom: 30px;
+         }
+
+         .social {
+            i {
+               @include transition(all,0.5s,ease-out);
+               height       : 40px;
+               width        : 40px;
+               background   : $grijs_donker;
+               color        : white;
+               border-radius: 40px;
+               text-align   : center;
+               line-height  : 40px;
+               margin-right : 8px;
+
+               &:hover {
+                  background: darken($grijs_donker, 20%);
+               }
+            }
+         }
+
+         ul {
+            padding: 0;
+            margin : 0;
+
+            li {
+               list-style   : none;
+               margin-bottom: 10px;
+               color        : $tekst;
+
+               a {
+                  color: $tekst;
+               }
+            }
+         }
+      }
+
+      .bottom-footer {
+         background: $grijs_donker;
+         padding   : 20px 0;
+         color     : white;
+
+         ul {
+            margin-bottom: 0;
+            padding-left : 0;
+
+            li {
+               display: inline;
+
+               a {
+                  @include transition(all,0.5s,ease-out);
+                  color: white;
+
+                  &:hover {
+                     text-decoration: underline;
+                  }
+
+                  &:first-child {
+                     &::after {
+                        content     : "|";
+                        margin-left : 15px;
+                        margin-right: 10px;
+                     }
+                  }
+               }
+            }
+         }
+      }
+   }
+}

@@ -115,6 +115,12 @@ return $count;
 }
 }
 
+function custom_add_google_fonts() {
+ wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Montserrat:300,400,400i,500,600,700,800,900', false );
+ wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
+ }
+ add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts', 'fontawesome' );
+
 if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.php' ) ) {
 	// file does not exist... return an error.
 	return new WP_Error( 'class-wp-bootstrap-navwalker-missing', __( 'It appears the class-wp-bootstrap-navwalker.php file may be missing.', 'wp-bootstrap-navwalker' ) );
@@ -125,6 +131,18 @@ if ( ! file_exists( get_template_directory() . '/class-wp-bootstrap-navwalker.ph
 
 register_nav_menus( array(
 	'primary' => __( 'Primary Menu', 'Hoofdmenu' ),
+	'footer' => __( 'Footer Menu', 'Footer_menu' ),
 ) );
 
+if( function_exists('acf_add_options_page') ) {
+
+	acf_add_options_page(array(
+		'page_title' 	=> 'Thema instellingen',
+		'menu_title'	=> 'Thema instellingen',
+		'menu_slug' 	=> 'thema-instellingen',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+}
 ?>
