@@ -45,12 +45,24 @@
         <div class="intro">
           <?php if( get_field('titel') ) : ?>
             <h1><?php the_field('titel'); ?></h1>
+          <?php elseif (is_singular('post')): ?>
+            <h1><?php the_title(); ?></h1>
+          <?php elseif (is_singular('cr_vergadering')): ?>
+            <h1>Vergaderingen</h1>
+          <?php elseif (is_singular('agenda')): ?>
+            <h1><?php the_title(); ?></h1>
           <?php else: ?>
             <h1><?php the_field('standaard_titel', 'option'); ?></h1>
           <?php endif; ?>
 
           <?php if( get_field('subtitel') ) : ?>
             <h2><?php the_field('subtitel'); ?></h2>
+          <?php elseif (is_singular('post')): ?>
+            <h2><?php the_date(); ?> | <?php the_author(); ?></h2>
+          <?php elseif (is_singular('cr_vergadering')): ?>
+            <h2>Alle in’s & out’s van de laatste vergaderingen</h2>
+          <?php elseif (is_singular('agenda')): ?>
+            <h2><?php the_author(); ?> | <?php the_field( 'locatie' )?></h2>
           <?php else: ?>
             <h2><?php the_field('standaard_subtitel', 'option'); ?></h2>
           <?php endif; ?>

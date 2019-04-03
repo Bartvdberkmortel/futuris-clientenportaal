@@ -102,6 +102,54 @@
 		"oAP": "\/index.php",
 		"oF": 0
 		},
+	"\/js\/script-min.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/script-min-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/js\/script.js": {
+		"ft": 64,
+		"ma": 0,
+		"mi": 1,
+		"oA": 0,
+		"oAP": "\/js\/script-min.js",
+		"oF": 0,
+		"sC": 3,
+		"tS": 0
+		},
+	"\/page-agenda.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-agenda.php",
+		"oF": 0
+		},
+	"\/page-clientenraad.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-clientenraad.php",
+		"oF": 0
+		},
+	"\/page-contact.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-contact.php",
+		"oF": 0
+		},
+	"\/page-vergaderingen.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/page-vergaderingen.php",
+		"oF": 0
+		},
 	"\/page.php": {
 		"cB": 0,
 		"ft": 8192,
@@ -138,6 +186,13 @@
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/sidebar.php",
+		"oF": 0
+		},
+	"\/single-cr_vergadering.php": {
+		"cB": 0,
+		"ft": 8192,
+		"oA": 0,
+		"oAP": "\/single-cr_vergadering.php",
 		"oF": 0
 		},
 	"\/single.php": {

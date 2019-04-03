@@ -118,6 +118,11 @@ return $count;
 function custom_add_google_fonts() {
  wp_enqueue_style( 'custom-google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather:300,400,700,900|Montserrat:300,400,400i,500,600,700,800,900', false );
  wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.4.1/css/all.css');
+ wp_enqueue_style('slick-css', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css');
+
+ wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.3.1.slim.min.js');
+ wp_enqueue_script('script-min.js', get_template_directory_uri() . '/js/script-min.js');
+ wp_enqueue_script('slick.js', 'https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js');
  }
  add_action( 'wp_enqueue_scripts', 'custom_add_google_fonts', 'fontawesome' );
 
@@ -145,4 +150,31 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 }
+
+function get_excerpt($limit, $source = null){
+
+    $excerpt = $source == "content" ? get_the_content() : get_the_excerpt();
+    $excerpt = preg_replace(" (\[.*?\])",'',$excerpt);
+    $excerpt = strip_shortcodes($excerpt);
+    $excerpt = strip_tags($excerpt);
+    $excerpt = substr($excerpt, 0, $limit);
+    $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+    $excerpt = trim(preg_replace( '/\s+/', ' ', $excerpt));
+    $excerpt = $excerpt.'... <a href="'.get_permalink($post->ID).'">more</a>';
+    return $excerpt;
+}
+
+?>
+
+<?php
+
+// Redirect users who arent logged in...
+function members_only() {
+    global $pagenow;
+    // Check to see if user in not logged in and not on the login page
+    if( !is_user_logged_in() && $pagenow != 'wp-login.php' )
+          auth_redirect();
+}
+add_action( 'wp', 'members_only' );
+
 ?>
